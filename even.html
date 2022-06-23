@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  h3{
+  color:green;
+  text-align:center;
+  }
+  .main{
+   text-align:center;
+  }
+   
+
+</style>
+</head>
+<body>
+<h3>EVEN OR ODD</h3>
+<div class="main">
+   NUMBER: <input class="input" type="text" id="number" ><br><br>
+	   
+    <button class="button" onclick="events()">Click Me</button>
+<p id="dem"></p>
+</div>
+<script>
+// program to check if the number is even or odd
+// take input from the user
+function events(){
+const number = document.getElementById("number").value;
+
+//check if the number is even
+if(number % 2 == 0) {
+    console.log("The number is even.");
+	document.getElementById("dem").innerHTML="this number is the even number";
+}
+
+// if the number is odd
+else {
+    console.log("The number is odd.");
+	document.getElementById("dem").innerHTML="this number is the odd number";
+}
+}
+
+</script>
+</body>
+</html>

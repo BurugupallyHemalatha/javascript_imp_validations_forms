@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+  h3{
+  color:green;
+  text-align:center;
+  }
+  .main{
+   text-align:center;
+  }
+   
+
+</style>
+</head>
+<body>
+
+<h3>SIMPLE CALCULATOR </h3>
+<div class="main">
+NUMBER1:<input type="text"  id="num1"><br><br>
+NUMBER2:<input type="text"  id="num2"><br><br>
+OPERATOR:<input type="text" id="operator"placeholder="either +, -, * or / "><br><br>
+<button onclick="calculate()">click</button> 
+<p id="demo"></p>
+</div>
+<script>
+function  calculate(){
+		   var numb1=parseFloat(document.getElementById("num1").value);
+		   var numb2=parseFloat(document.getElementById("num2").value);
+		   var operator=document.getElementById("operator").value;
+		   
+   
+switch(operator) {
+    case '+':
+         result = numb1 + numb2;
+        console.log(`${numb1} + ${numb2} = ${result}`);
+		document.getElementById("demo").innerHTML= (`${numb1} + ${numb2} = ${result}`);
+        break;
+    case '-':
+         result = numb1 - numb2;
+        console.log(`${numb1} - ${numb2} = ${result}`);
+		document.getElementById("demo").innerHTML= (`${numb1} - ${numb2} = ${result}`);
+        break;
+    case '*':
+         result = numb1 * numb2;
+        console.log(`${numb1} * ${numb2} = ${result}`);
+		document.getElementById("demo").innerHTML= (`${numb1} * ${numb2} = ${result}`);
+        break;
+    case '/':
+         result = numb1 / numb2;
+        console.log(`${numb1} / ${numb2} = ${result}`);
+		document.getElementById("demo").innerHTML= (`${numb1} / ${numb2} = ${result}`);
+        break;
+		case '%':
+		result=numb1%numb2;
+		console.log(`${numb1}/${numb2}=${result}`);
+		document.getElementById("demo").innerHTML=(`${numb1}/${numb2}=${result}`);
+		break;
+    default:
+        console.log('Invalid operator');
+        break;
+}
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+
+
+<html>
+<body>
+array:<input type="text" id="text">
+<button onclick="submit()">click</button>
+
+
+
+<script>
+function submit(){
+var a=[1,2,4,8,16,32,64,128,256,512]
+console.log("main array:"+a);
+var val=document.getElementById("text").value;
+console.log(a.reverse());
+let total=0;
+var b=a.filter(function(items){
+return val > items
+})
+
+let value=val;
+let newarray= []
+
+b.forEach(number=>{
+console.log(total,"i want",value,number,"adding");
+if(total < val && number <=  value){
+ total += number;
+ newarray.push(number);
+ }
+ value=val-total;
+})
+
+console.log(newarray);
+console.log(newarray.reverse());
+
+}
+
+</script> 
+</body>
+</html>

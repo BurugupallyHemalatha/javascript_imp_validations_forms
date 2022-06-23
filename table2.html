@@ -1,0 +1,98 @@
+<input type="text" class="myInput" onkeyup="setFilter(this, 0)" placeholder="Search for branch.." title="Search branch">
+<input type="text" class="myInput" onkeyup="setFilter(this, 1)" placeholder="Search for company.." title="Search company">
+<input type="text" class="myInput" onkeyup="setFilter(this, 2)" placeholder="Search for site number.." title="Search company">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:20%;">Name</th>
+    <th style="width:20%;">Company</th>
+    <th style="width:20%;">job</th>
+  </tr>
+  <tbody>
+  <tr>
+    <td>BILDWARE</td>
+    <td>Bildware Durban</td>
+    <td>1178</td>
+
+  
+  </tr>
+  <tr>
+    <td>BUCHEL</td>
+    <td>apple</td>
+    <td>1172</td>
+  
+
+  </tr>
+  <tr>
+    <td>BUCHEL</td>
+    <td>Buchel Faerie Glenn</td>
+    <td>1173</td>
+   
+   
+  </tr>
+  <tr>
+    <td>BUCHEL</td>
+    <td>Buchel Northlands</td>
+    <td>1199</td>
+   
+  </tr>
+  <tr>
+    <td>BUCO</td>
+    <td>BUCO Acornhoek</td>
+    <td>1056</td>
+
+  </tr>
+  <tr>
+    <td>BUCO</td>
+    <td>BUCO Alice</td>
+    <td>0024</td>
+    
+
+  </tr>
+  <tr>
+    <td>BUCO</td>
+    <td>BUCO Athlone</td>
+    <td>1166</td>
+  
+  </tr>
+  <tr>
+    <td>BUCO</td>
+    <td>BUCO Bergvliet</td>
+    <td>1165</td>
+  
+  </tr>
+  </tbody>
+</table>
+
+<script>
+let filters = ["",""];
+
+function setFilter(thisInput, thisIndex) {
+  filters[thisIndex] = thisInput.value.toUpperCase();
+  
+  filterTable();
+}
+
+function filterTable() {
+  var table = document.getElementById("myTable");
+  var rows = Object.values(table.getElementsByTagName("tr"));
+  
+  for(var rowItr=1; rowItr < rows.length; rowItr++) {
+    var row = rows[rowItr];
+    var cells = Object.values(row.getElementsByTagName("td"));
+    
+    
+    var isRowVisible = filters.every((filter, filterIndex) => {
+        var cell = cells[filterIndex];
+        var Value = cell.Content || cell.innerText;
+
+        return filter === "" || Value.indexOf(filter) > -1;
+    });
+    
+    row.style.display = isRowVisible ? "" : "none";
+  };
+}
+
+
+
+</script>

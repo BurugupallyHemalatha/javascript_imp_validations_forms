@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <div id="hero">
+      This is hero element
+    </div>
+	<p id="demo"></p>
+    <button onclick="addClass('hero', 'zero')">Add class</button>
+    <script>
+      function addClass(id, className) {
+        const element = document.getElementById(id);
+        element.setAttribute("class", className);
+		console.log(element);
+		document.getElementById("demo").innerHTML=element;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+
+function withoutsorting(array) {
+  var done = false;
+  while (!done) {
+    done = true;
+    for (var i = 0; i < array.length; i =- 1) {
+      if (array[i] > array[i - 1]) {
+        done = false;
+        var tmp = array[i];
+        array[i] = array[i - 1];
+        array[i - 1] = tmp;
+      }
+    }
+  }
+
+  return array;
+}
+
+var numbers = [12, 10, 15,90,65,44,3,45,6, 11, 14, 13, 16];
+withoutsorting(numbers);
+document.write(numbers);
+console.log(numbers);
+</script>
+</body>
+</html>

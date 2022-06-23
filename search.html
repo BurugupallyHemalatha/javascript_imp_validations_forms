@@ -1,0 +1,161 @@
+<table style="width:100%">
+  <tr>
+    <th>name</th>
+    <th>compnay</th>
+    <th>Job</th>
+  </tr>
+  <tr>
+    <td><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search "></td>
+  <td><input type="text" id="Input" onkeyup="myFun()" placeholder="Search"> </td>
+    <td><input type="text" id="myin" onkeyup="myF()" placeholder="Search "></td>
+  </tr>
+
+
+
+<tr>
+<td>
+<ul id="list">
+  <li><p>ram</p></li>
+  <li><p>charan</p></li>
+  <li><p>balu</p></li>
+  <li><p>dhurva</p></li>
+  <li><p>akesh</p></li>
+  <li><p>jagadeesh</p></li>
+  <li><p>kiran</p></li>
+  <li><p>jaggu</p></li>
+</ul>
+</td>
+ <td>
+<ul id="mylist">
+  <li><p>apple</p></li>
+  <li><p>deloite</p></li>
+  <li><p>google</p></li>
+  <li><p>apple</p></li>
+  <li><p>apple</p></li>
+  <li><p>deloite</p></li>
+  <li><p>mnc</p></li>
+  <li><p>mnc</p></li>
+</ul>
+</td>
+
+<td>
+<ul id="my">
+  <li><p>developer</p></li>
+  <li><p>webdeveloper</p></li>
+  <li><p>developer</p></li>
+  <li><p>.not</p></li>
+  <li><p>webdeveloper</p></li>
+  <li><p>software developer</p></li>
+  <li><p>angular</p></li>
+  <li><p>react</p></li>
+</ul>
+</td>
+</tr>
+</table>
+
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, p, j, Value;
+    input = document.getElementById("myInput");
+    filter = input.value;
+    ul = document.getElementById("list");
+    li = ul.getElementsByTagName("li");
+    for (j = 0; j < li.length; j++) {
+        p = li[j].getElementsByTagName("p")[0];
+        Value = p.innerText || p.givendata;
+        if (Value.indexOf(filter) > -1) {
+            li[j].style.display = " ";
+			  
+        } else {
+            li[j].style.display = "none";
+			 
+        }
+    }
+}
+
+function myFun() {
+    var input, filter, ul, li, p, j, Value;
+    input = document.getElementById("Input");
+    filter = input.value;
+    ul = document.getElementById("mylist");
+    li = ul.getElementsByTagName("li");
+    for (j = 0; j < li.length; j++) {
+        p = li[j].getElementsByTagName("p")[0];
+        Value = p.innerText || p.givendata;
+        if (Value.indexOf(filter) > -1) {
+            li[j].style.display = "";
+			  
+        } else {
+            li[j].style.display = "none";
+			 
+        }
+    }
+}
+function myF() {
+    var input, filter, ul, li, p, j, Value;
+    input = document.getElementById("In");
+    filter = myin.value;
+    ul = document.getElementById("my");
+    li = ul.getElementsByTagName("li");
+    for (j = 0; j < li.length; j++) {
+        p = li[j].getElementsByTagName("p")[0];
+        Value = p.innerText || p.givendata;
+        if (Value.indexOf(filter) > -1) {
+            li[j].style.display = "";
+			  
+        } else {
+            li[j].style.display = "none";
+			 
+        }
+    }
+}
+</script>
+
+<tr>
+    <th>Name</th>
+    <th>compnay</th>
+	<th>job</th>
+  </tr>
+  <tr>
+    <td>ram</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>jaggu</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>dhruva</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>kiran</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>jagadeesh</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>ram</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+ <tr>
+    <td>ram</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>ram</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+</table>

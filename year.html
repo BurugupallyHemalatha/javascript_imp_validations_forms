@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<script>
+var year, temp;
+function fun()
+{
+  year = parseInt(document.getElementById("years").value);
+  if(year)
+  {
+    temp = document.getElementById("resPara");
+    temp.style.display = "block";
+    if((year%4==0) && (year%100!=0))
+      document.getElementById("res").innerHTML = "a Leap";
+    else if(year%400==0)
+      document.getElementById("res").innerHTML = "a Leap";
+    else
+      document.getElementById("res").innerHTML = "not a Leap";
+  }
+}
+</script>
+<script>
+    var dob = new Date("06/3/2000");
+    //calculate month difference from current date in time
+    var month_diff = Date.now() - dob.getTime();
+    
+    //convert the calculated difference in date format
+    var age_dt = new Date(month_diff); 
+    
+    //extract year from date    
+    var year = age_dt.getUTCFullYear();
+    
+    //now calculate the age of the user
+    var age = Math.abs(year - 1970);
+    
+    //display the calculated age
+    document.write("Age of the date entered: " + age + " years");
+</script>
+</head>
+<body>
+
+<p>Enter the Year: <input id="years"><button onclick="fun()">Check</button></p>
+<p id="resPara" style="display:none;">It is <span id="res"></span> Year</p>
+
+</body>
+</html>

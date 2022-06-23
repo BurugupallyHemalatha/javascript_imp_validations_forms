@@ -1,0 +1,51 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> 
+       
+    </title>
+</head> 
+  
+<body> 
+    <center>
+        <h1 id = "h1" style = "color:green;" > 
+          HEADING
+        </h1>
+          
+        <p id = "GFG_UP" style = 
+                "font-size: 15px; font-weight: bold;">
+        </p>
+              
+        <button onclick = "gfg_Run()"> 
+            Click here
+        </button>
+          
+        <p id = "GFG_DOWN" style = 
+            "font-size: 23px; font-weight: bold; color: green; ">
+        </p>
+          
+        <script>
+            var el_up = document.getElementById("GFG_UP");
+            var el_down = document.getElementById("GFG_DOWN");
+            var heading = document.getElementById("h1");
+            el_up.innerHTML = "Click on the button to "
+                            + "change the style attribute";
+              
+            function gfg_Run() {
+                heading.style["color"] = "white";
+                heading.style["background-color"] = "green";
+                heading.style["width"] = "300px";
+                heading.style["border"] = "1px solid black";
+                  
+                el_up.style["background-color"] = "green";
+                el_up.style["width"] = "400px";
+                el_up.style["border"] = "1px solid black";
+                  
+                el_down.innerHTML = "Style Attribute Changed";
+            }         
+        </script> 
+    </center>
+</body> 
+  
+</html>

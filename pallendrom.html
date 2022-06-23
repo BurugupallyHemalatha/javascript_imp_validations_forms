@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+<h3>palindrom funtion</h3>
+ <input type="text" id="input" placeholder="ENTRE ONLY  STRING"><button id="btn" onclick="palindrom()">click</button> 
+ <p id="demo"></p>
+ <p id="dem"></p>
+<script>
+
+function palindrom(str){
+//const value=string.split('');
+  //const string = document.querySelector('input').value;
+   const string=document.getElementById("input").value;
+  const values=string.split('');
+   const reversevalue=values.reverse();
+   const finallvalue=reversevalue.join('');
+   if(string == finallvalue){
+    document.getElementById("demo").innerHTML="this is a pallendrom"
+   }
+   else{
+     document.getElementById("demo").innerHTML="this is a not a pallendrom"
+    }
+}
+ //const string=prompt("enter a string");
+	palindrom(string);
+	 
+ 
+</script>
+</body>
+</html>

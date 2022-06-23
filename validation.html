@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>JavaScript Form Validation using a sample registration form</title>
+ <style>
+ b{
+ color:red;
+ }
+ li {
+    margin-left: 35px;
+    margin-top: 12px;
+}
+h1 {
+    text-align: center;
+}
+.btn {
+    text-align: center;
+    /* margin-left: 368px; */
+    /* float: right; */
+    position: relative;
+   left: 633px;
+    top: -47px;
+    padding: 6px 19px 7px 16px;
+    background: radial-gradient(black, transparent);
+    outline: none;
+}
+form {
+    border: 2px solid #e3d7d7;
+    background-color: #f9f1ee;
+    border-radius: 20px;
+    padding-bottom: 31px;
+}
+ </style>
+</head>
+<body>
+<h1><u>Registration Form</u></h1>
+<div class="main">
+<form name='registration'  " onsubmit ="return(formValidation());" >
+<ul>
+<li><label for="userid">User id:</label></li>
+<li><input type="text" name="userid" size="12" id="user" /><b id="err1"></b></li>
+<li><label for="passid">Password:</label></li>
+<li><input type="password" name="passid" size="12" id="pass" /><b id="err2"></b></li>
+<li><label for="username">Name:</label></li>
+<li><input type="text" name="username" size="12" id="names" /><b id="err3"></b></li>
+<li><label for="address">Address:</label></li>
+<li><textarea type="textarea" name="address" size="50" id="address"></textarea><b id="err4"></b></li>
+<li><label for="country">Country:</label></li>
+<li><select name="country" id="countrys">
+		<option selected="" value="0">(Please select a country)</option>
+		<option value="1">Australia</option>
+		<option value="2">Canada</option>
+		<option value="3">India</option>
+		<option value="4">Russia</option>
+		<option value="5">USA</option>
+</select><b id="err8"></b><li>
+<li><label for="zip">ZIP Code:</label></li>
+<li><input type="text" name="zip" id="zip"/><b id="err6"></b></li>
+<li><label for="email">Email:</label></li>
+<li><input type="text" name="email" size="50"id="email" /><b id="err7"></b></li>
+<li><label for="number">Phone Number:</label></li>
+<li><input type="text" name="number" id="number" /><b id="err10"></b></li>
+<li><label >Sex:</label></li>
+<li><input type="radio" name="sex" value="Male" id="gender1"/><span>Male</span>
+     <input type="radio" name="sex" value="Female" id="gender1" /><span>Female</span><b id="err9"></b></li>
+<li><label>Language:</label></li>
+<li><input type="checkbox" name="en" value="en" checked id="checkbox"  /><span>English</span>
+<input type="checkbox" name="nonen" value="noen"  id="checkbox" /><span>Non English</span><b id="err11"></b> </li>
+<li><label>About:</label></li>
+<li><textarea name="desc" id="textarea" ></textarea><b id="err5"></b></</li>
+
+</ul>
+</form>
+<input type="submit" name="submit" value="Submit" class="btn" onclick="formValidation()"  />
+
+</div>
+<script>
+function formValidation(){
+var userid=document.getElementById("user").value;
+
+              //IF-ELSE STATEMENT
+				if(userid !=""){
+					 document.getElementById("err1").innerHTML="  ";
+					 document.getElementById("err1").style.color="blue";
+				}else{
+                     document.getElementById("err1").innerHTML="plase fill the user id";
+					    //document.getElementById("err1").userid.focus() ;
+				 
+				}
+				
+				//IF ELSE-IF STATEMENT
+					if(isNaN(userid)){
+						document.getElementById("err1").innerHTML="ONLY NUMBERS CAn ALLOWS";
+						document.getElementById("err1").style.color="gray";
+					}
+					else if(userid.length ==6){ 
+						 document.getElementById("err1").innerHTML=" ";
+						 document.getElementById("err1").style.color="blue";
+					}else{
+						 document.getElementById("err1").innerHTML=" please user id must be 6 NUMBERS input ";
+					}
+
+
+var password=document.getElementById("pass").value
+
+var passw=/^[A-Za-z]\w{7,15}$/;
+			if(password !=""){
+				 document.getElementById("err2").innerHTML=" ";
+				 document.getElementById("err2").style.color="blue";
+			} else{
+			     document.getElementById("err2").innerHTML="please fill the passowrd input";
+				//  document.getElementById("err2").password.focus() ;
+			}
+         if(pass.value.match(passw)) { 
+				 document.getElementById("err2").innerHTML='Correct matched...., ';
+				
+				}
+				else
+				{ 
+			 document.getElementById("err2").innerHTML='[7 to 15 characters which contain only characters, numeric digits, underscore and first character must be a letter]';
+				}          
+
+/*var lowerCaseLetters = /[a-z]/g;
+		  if(password.match(lowerCaseLetters)) {  
+		        document.getElementById("err2").innerHTML="ok!!!";
+		  } else {
+		        document.getElementById("err2").innerHTML="please fill lower input";
+		  }
+ var upperCaseLetters = /[A-Z]/g;
+		  if(password.match(upperCaseLetters)) {  
+		        document.getElementById("err2").innerHTML="ok!!!";
+		  } else {
+		        document.getElementById("err2").innerHTML="please fill captil case";
+		  }
+var numbers = /[0-9]/g;
+		  if(password.match(numbers)) {  
+		         document.getElementById("err2").innerHTML="ok!!!";
+		  } else {
+		         document.getElementById("err2").innerHTML="please fill numbers ";
+		  }
+
+		 if(password.length>=8) {  
+		         document.getElementById("err2").innerHTML="ok!!!";
+		  } else {
+		         document.getElementById("err2").innerHTML="must be 8 characters  ";
+		  }
+		  */
+ 
+  
+  
+  
+var name=document.getElementById("names").value;
+
+  var letters = /^[A-Z a-z]+$/;
+                /* if(name !="" && isNaN(name)){
+						document.getElementById("err3").innerHTML="ONLY NUMBERS CAn ALLOWS";
+						document.getElementById("err3").style.color="gray";
+					}*/
+
+	               	if( name.match(letters)){
+					  document.getElementById("err3").innerHTML='Your name have accepted';
+					 document.getElementById("err3").style.color="blue";
+				   }else if(name !=""){
+				     document.getElementById("err3").innerHTML="  ";
+					 }else{
+                     document.getElementById("err3").innerHTML="please fill the user id";
+					 //document.getElementById("err2").name.focus() ;
+	                 }
+
+					/*if(name.length <20){ 
+						 document.getElementById("err3").innerHTML=" ";
+						 document.getElementById("err3").style.color="blue";
+					}else{
+						 document.getElementById("err3").innerHTML=" please name must be less than 20 letters ";
+					}*/
+		            
+					
+						/*  if(name.value.match(letters))
+						  {
+						   document.getElementById("err3").innerHTML='Your name have accepted';
+						  
+						  }
+						  else
+						  {
+						  document.getElementById("err3").innerHTML='Please input alphabet characters only';
+						   
+						  }*/
+
+
+
+var address=document.getElementById("address").value
+
+		if(address !=""){
+					 document.getElementById("err4").innerHTML="  ";
+					 document.getElementById("err4").style.color="blue";
+				   }else{
+                     document.getElementById("err4").innerHTML="plase fill the address id";
+					 //document.getElementById("err4").address.focus() ;
+	                 }
+
+					if(address.length < 50){ 
+						 document.getElementById("err4").innerHTML=" ";
+						 document.getElementById("err4").style.color="blue";
+					}else{
+						 document.getElementById("err4").innerHTML=" address length less than 50 letters ";
+					}
+					
+					
+			/*			if(address !=""){
+						 document.getElementById("err4").innerHTML="";
+						 document.getElementById("err4").style.color="blue";
+				   }else if(address.length < 10){ 
+						 document.getElementById("err4").innerHTML="  plase fill the textarea id  ";
+						
+					}else{
+						 document.getElementById("err4").innerHTML="textarea  length less than  100 letters";
+						 // document.getElementById("err4").textarea.focus() ;
+					}*/
+
+
+
+
+var textarea=document.getElementById("textarea").value
+               
+	            	if(textarea !=""){
+						 document.getElementById("err5").innerHTML="";
+						 document.getElementById("err5").style.color="blue";
+				   }else if(textarea.length < 10){ 
+						 document.getElementById("err5").innerHTML="  plase fill the textarea id  ";
+						
+					}else{
+						 document.getElementById("err5").innerHTML="textarea  length less than  100 letters";
+						 // document.getElementById("err5").textarea.focus() ;
+					}
+
+						 
+	                 
+
+var countrys= document.getElementById("countrys").value
+
+		/*if(countrys !=""){
+				 document.getElementById("err8").innerHTML="ok!!!!!!";
+				 document.getElementById("err8").style.color="blue";
+		}else{
+	            document.getElementById("err8").innerHTML="plase choose the country ";
+		}*/
+		 if( countrys == "0" ) {
+		               text = "Please provide your country ";
+					   document.getElementById("err8").innerHTML = text;
+            }else{
+			          document.getElementById("err8").innerHTML="  ";
+				}
+
+var gender1=document.getElementById("gender1").value
+
+        if(document.getElementById('gender1').checked == true) {   
+   	             document.getElementById("err9").innerHTML=" ";
+				 document.getElementById("err9").style.color="blue";
+		}else{
+	           	 document.getElementById("err9").innerHTML="please choose the gender ";
+				// document.getElementById("err9").gender1.focus() ;
+		} 
+/*var gender2=document.getElementById("gender2").value
+
+        if(document.getElementById('gender2').checked == true) {   
+   	             document.getElementById("err9").innerHTML=" ";
+				 document.getElementById("err9").style.color="blue";
+		}else{
+	           	document.getElementById("err9").innerHTML="please choose the gender ";
+				// document.getElementById("err9").gender2.focus() ;
+		} 
+*/
+
+   var check=document.getElementById("checkbox").value;
+         if(document.getElementById('checkbox').checked == true) {   
+   	             document.getElementById("err11").innerHTML=" ";
+				 document.getElementById("err11").style.color="blue";
+		}else{
+	           	 document.getElementById("err11").innerHTML="please choose the checkbox  ";
+				
+		} 
+
+var zip=document.getElementById("zip").value
+
+        //IF-ELSE STATEMENT
+					if(zip !="" ){
+							 document.getElementById("err6").innerHTML=" ";
+							 
+					}else{
+							document.getElementById("err6").innerHTML="please fill the zip input";
+							// document.getElementById("err6").zip.focus() ;
+					}
+					if(isNaN(zip)){
+					         document.getElementById("err6").style.color="blue";
+							 document.getElementById("err6").innerHTML="ONLY NUMBERS CAn ALLOWS";
+							  //document.getElementById("err6").zip.focus() ;
+	                 	}
+		//IF ELSE-IF STATEMENT
+               /*      if(zip !=""){
+		                     document.getElementById("err6").innerHTML=" ";
+							 document.getElementById("err6").style.color="blue";
+					}else if(isNaN(zip)){
+							  document.getElementById("err6").innerHTML="ONLY NUMBERS CAn ALLOWS";
+							  document.getElementById("err6").style.color="gray";
+					}else if(zip.length==6){
+                             document.getElementById("err6").innerHTML=" please zip code is qual to  6  codes  ";
+					}
+					else{
+						   document.getElementById("err6").innerHTML="please zip code is qual to  6  codes";
+					}
+*/
+
+var number=document.getElementById("number").value
+
+		/*if(number !="" && isNaN(number) && number.length ==10){
+				 document.getElementById("err10").innerHTML=" ";
+				 document.getElementById("err10").style.color="blue";
+				 document.getElementById("err10").innerHTML="ONLY NUMBERS CAn ALLOWS";
+		} else{
+				 document.getElementById("err10").innerHTML=" fill the number input $$ NUMBER MUST BE 10 NUMBERS ";
+			}*/
+		//IF ELSE-IF STATEMENT
+		            if(number !="" && isNaN(number)){
+						document.getElementById("err10").innerHTML="ONLY NUMBERS CAn ALLOWS";
+						document.getElementById("err10").style.color="gray";
+					}
+					else if(number.length ==10){ 
+						 document.getElementById("err10").innerHTML=" ";
+						 document.getElementById("err10").style.color="blue";
+					}else{
+						 document.getElementById("err10").innerHTML=" fill the number input $$ NUMBER MUST BE 10 NUMBERS ";
+						 // document.getElementById("err10").number.focus() ;
+					}
+
+
+var email=document.getElementById("email").value;
+
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		/*if(email !="" && email.match(mailformat)){
+				 document.getElementById("err7").innerHTML=" ";
+				 document.getElementById("err7").style.color="blue";
+				 document.getElementById("err7").innerHTML="Valid email address!";
+		}else{
+		         document.getElementById("err7").innerHTML="please fill the email  input";
+		 }*/
+ 
+ 
+		if(email.match(mailformat)){
+				   document.getElementById("err7").innerHTML="Valid email address!";
+				   document.getElementById("err7").style.color="blue";
+		}else if(email !=""){
+					document.getElementById("err7").innerHTML="You have entered an invalid email address!";
+		}
+         else{
+					document.getElementById("err7").innerHTML="please fill the email  input";
+					//  document.getElementById("err7").email.focus() ;
+		 }
+		 
+ 
+
+}
+
+</script>
+ 
+</body>
+</html>

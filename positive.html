@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+
+<h3>POSITIVE OR NEGATIVE NUMBERS</h3>
+<input type="text"placeholder="enter only numbers " id="number">
+<br><br>
+<button onclick="positve()">click</button>
+<p id="demo"></p>
+
+<script>
+function  positve(){
+ var num1=document.getElementById("number").value;
+	 if(num1 >1){
+	 alert("given num is the positive no")
+	 }
+	 else if(num1==0){
+	 alert("given num is a zero")
+	 }
+	 else if(isNaN(num1)){
+	alert("please enter only numbers");
+	}
+	else if(num1=" "){
+	alert("please a numbers");
+	}
+	 else{
+	 alert("given num is a naegative numbers")
+	}
+	
+}
+</script>
+</body>
+</html>

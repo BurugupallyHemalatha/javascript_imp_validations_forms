@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+  h2{
+  color:green;
+  text-align:center;
+  }
+  .main{
+   text-align:center;
+  }
+   
+
+</style>
+</head>
+<body>
+
+<h2>number palindrom</h2>
+<div class="main">
+<input type="text"placeholder="enter only numbers " id="number"><button onclick="mypal()">click</button>
+<p id="demo"></p>
+</div>
+<script>
+function mypal(){
+var a,b,no,temp=0;
+		no=Number(document.getElementById("number").value);
+		b=no;
+while(no>0){
+		a=no%10;
+		no=parseInt(no/10);
+		temp=temp*10+a;
+}
+ if(temp==b){
+		 document.getElementById("demo").innerHTML="it is a palindrome ";
+		 alert("this is a palindrom")
+ }
+ else{
+		 document.getElementById("demo").innerHTML="it is a not a palindrom";
+		 alert("this is a not a a palindrom");
+ }
+}
+ 
+		 
+		 
+
+</script>
+</body>
+</html>

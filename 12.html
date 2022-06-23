@@ -1,0 +1,236 @@
+<html>
+<head>
+</head>
+<body>
+<h2>first element removes</h2>
+<p id="dem"></p>
+<p id="demo"></p>
+<h2>;last element removes</h2>
+<p id="de"></p>
+<p id="deo"></p>
+<h2>Adding elements to array</h2>
+<p id="d"></p>
+<p id="demoo"></p>
+<h2>sorting elements to array</h2>
+<p id="s1"></p>
+<p id="s2"></p>
+<h2>combined of two strings</h2>
+<p id="st2"></p>
+<p id="st1"></p>
+<h2>convert to uppercase</h2>
+<p id="up"></p>
+<h2>satisfies array incase any one element is there</h2>
+<p id="array1"></p>
+<p id="array2"></p>
+<h2>satisfies string incase any one string</h2>
+<p id="string"></p>
+<p id="string2"></p>
+<h2>boolean</h2>
+<p id="boolean"></p>
+<h2>//returns number</h2>
+<p id="num1"></p>
+<h2>string into array</h2>
+<p id="stingintoarray"></p>
+<h2>type of arrguments</h2>
+<p id="type"></p>
+<p id="type1"></p>
+<h2>for of //for in</h2>
+<p id="for"></p>
+<p id="forin"></p>
+<p id="strings"></p>
+<p id="sub"></p>
+<h2>string ----5</h2>
+<p id="str5"></p>
+<h2>redirect url by using javascript</h2>
+<button onclick="url()">click to get the location</button>
+<p id="url"></p>
+<h2> array of object</h2>
+<p id="source"></p>
+<h2>cookie</h2>
+<button onclick="cookies()">cookies</button>
+<h2>every method in array</h2>
+<p id="every"></p>
+<h2>some method</h2>
+<p id="some"></p>
+<script>
+//first element removes----------14-------------------------------------------1
+		var array=[1,2,34,5,6,67,7]
+		document.getElementById("dem").innerHTML=array
+			array.shift();
+			console.log(array);
+			document.getElementById("demo").innerHTML="Result="+array;
+//last element removes-------- 16----------------------------------------------2
+       var array=[1,2,34,5,6,67,7]
+		document.getElementById("de").innerHTML=array
+			array.pop()
+			console.log(array);
+			document.getElementById("deo").innerHTML="Result="+array;
+			//return console.log(array);
+//Adding elements to array-------1--------------------------------------------3
+		var array=[1,2,34,5,6,67,7]
+		document.getElementById("d").innerHTML=array
+			array.push(12,45,67,89)
+			console.log(array);
+			document.getElementById("demoo").innerHTML="Result="+array;
+//Sorting an array --------2----------------------------------------------------4
+var array=[1,2,34,5,6,67,7]
+		document.getElementById("s1").innerHTML=array
+			array.sort(function(a,b){return (a-b)})
+			console.log(array);
+			document.getElementById("s2").innerHTML="Result="+array;
+//combined two strings-----10---------------------------------------------------5
+		var str1="jaga";
+		var str2="deesh";
+		var result=str1.concat(str2);
+			console.log(result);
+			document.getElementById("st1").innerHTML="new name is="+result;
+//convert to uppercase-----11--------------------------------------------------6
+        var name="jagadeesh";
+		var uppercase=name.toUpperCase();
+			console.log(uppercase);
+			document.getElementById("up").innerHTML="new uppercase is="+uppercase;
+			
+//satisfies array incase any one element is there------13----------------------7
+		var array=[12,34,5,56,67,8]
+				ar1=array.includes(12);
+				arr2=array.includes(90);
+				console.log(ar1);
+				console.log(arr2);
+				document.getElementById("array1").innerHTML=ar1;
+				document.getElementById("array2").innerHTML=arr2;
+//SOME method satisfies array incase any one element is there------13----------------------
+      /*var arr=[12,34,5,56,67,8]
+	       arresult=arr.some();
+		   console.log(arresult);
+		   document.getElementById("some").innerHTML=arresult;*/
+// boolean----------7
+				var obj = new Boolean(27);
+				 document.getElementById("boolean").innerHTML=obj.valueOf();
+					
+//satisfies string incase any one string is there-------7-----------------------8
+		var str1="mango";
+		var res=str1.includes("ma");
+		var res1=str1.includes("gg");
+		//var res2=str1.includes("pinapple");
+			console.log(res);
+			console.log(res1);
+			//console.log(res2);
+			document.getElementById("string").innerHTML=res;
+			document.getElementById("string2").innerHTML=res1;
+//Array object returns true if at least one element in this array satisfies the provided testing function----
+      const arrayss = [1,3,5,];
+
+		const even = (element) => element % 2 === 0;
+
+		console.log(arrayss.some(even));
+//returns number----9-------------------------------------------------------------9
+			var number=12345;
+			var numb=number.valueOf();
+				console.log(numb);
+				document.getElementById("num1").innerHTML=numb;
+//string into array-------17--------------------------------------------------------10
+           var string2="jagadeesh";
+		   var resu=string2.split(',');
+			   console.log(resu);
+			   console.log(typeof(resu));
+			   document.getElementById("stingintoarray").innerHTML=resu;
+			   
+//type of arrguments-----4-------------------------------------------------------------11
+			function myfunction(){
+				let name="jaga";
+				let valu=" ";
+				let sum=name+valu
+					console.log(sum);
+				
+				return type.name
+				return type.name
+				}
+			myfunction()
+			   // console.log(typeof(valu)));
+				console.log(typeof(name));
+				console.log(typeof(valu));
+				document.getElementById("type").innerHTML=typeof(name);
+				document.getElementById("type1").innerHTML=typeof(valu);
+// array of object---------12----------------------------------------------------------16
+           // var arrayobject=[{name:"hello",value:1234,lastname:"nothing"}]
+		/*	var a=new Array("mango","apple","grap","pinapple");
+				result=a.toSource();
+				console.log(a);
+			    document.getElementById("source").innerHTML=a;*/
+							var user = {
+					firstName : 'ramcharan',
+					lastName : 'cherry',
+					emailId : 'rcj@gmail.com',
+					age : 29,
+					getFullName : function (){
+						return user.firstName + " " + user.lastName;
+					}
+				}
+
+						user.getFirstName = function(){
+							return this.firstName;
+						}
+
+						console.log(user.getFirstName());
+									
+			
+// string ----5
+			/*var str="Javascript";
+				let tx=" ";
+				for(let x of  str){
+				tx +=x;
+				console.log(tx);
+				}
+				document.getElementById("str5").innerHTML=tx;*/
+// string to string------5-----------------------------------------------------------12
+			var str=new String ("sweets");
+				ret=str.toString();
+				console.log(ret);
+				document.getElementById("strings").innerHTML=ret;
+				
+//string for of-----6
+		   /* var str="jagadeesh";
+				let txt=" ";
+				for(let x of  str){
+				txt +=x+"<br>";
+				console.log(txt);
+			}
+			document.getElementById("for").innerHTML=txt;
+					var str="jagadeesh";
+					let text=" ";
+					for(let x in  str){
+					text +=x;
+					console.log(text);
+					}
+					document.getElementById("forin").innerHTML=text;*/
+				 
+// string substring ----6---------------------------------------------------------------------13
+			var stri="apples"
+				re=stri.substring(1,3);
+				console.log(re);
+				document.getElementById("sub").innerHTML=re;
+//cookies--------3------------------------------------------------------------------------------14
+			function cookies(){
+               document.cookie="name=sachin";
+               document.cookie="name=dhoni";
+              }
+ 
+ 
+ 
+ 
+ 
+ //correct syntax to redirect a url by using javascript-----quation-no-15---------------------------------15
+          function url(){
+			  document.location="formvalidation.html"
+			  
+		  }
+ //every method in array-------8------------------------------------------------------------------17
+			 var a=new Array(1,2,3,4,3,2,4,3,2);
+				resultss=a.every();
+				console.log(resultss);
+				document.getElementById("every").innerHTML=resultss;
+				
+			
+</script>
+</body>
+</html>

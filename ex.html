@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+        var app = angular.module("myApp", []);
+        app.controller("myCntrl", ['$scope', '$http', function ($scope, $http) {
+            $scope.Checked = 2;
+            $scope.Disabled = true;
+            $scope.Enable = function (ele) {
+                $scope.Disabled = ele == 1 ? false : true;
+            }
+        } ]);
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCntrl">
+    <div id="wrapper" class="clearfix">
+        <form name="userForm" novalidate>
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-3" style="margin-top: 5px;">
+                    <label for="CAL_IsApproved">
+                        Radio Button</label><br />
+                    <input type="radio" name="CAL_IsApproved" ng-model="Radiobutton" ng-value="1" ng-checked="Checked == 1"
+                        ng-click="Enable(1)" />
+                    Yes
+                    <input type="radio" name="CAL_IsApproved" ng-model="Radiobutton" ng-value="0" ng-checked="Checked == 2"
+                        ng-click="Enable(2)" />
+                    No<br />
+                </div>
+                <div class="col-md-3">
+                    <label for="UserName">
+                        Text1</label>
+                    <input type="text" class="form-control" ng-model="Text1" ng-disabled="Disabled" />
+                </div>
+                <div class="col-md-3">
+                    <label for="Password">
+                        Text2</label>
+                    <input type="text" class="form-control" ng-model="Text2" ng-disabled="Disabled" />
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+
+		<input type="radio" name="one" (change)="testmain()">
+		<input type="radio" name="one" (change)="testsecond()">
+		<input type="text" placeholder="Testtttt" [disabled]="jagadeesh">
+		<input type="text" placeholder="Testtttt1" [disabled]="!jagadeesh">
+		<input type="text" placeholder="tests" [disabled]="!jagadeesh">
+
+
+export class AppComponent {
+
+  jagadeesh = true;
+
+  testmain() {
+    this.jagadeesh = true;
+  }
+  testsecond() {
+    this.jagadeesh = false;
+  }
+</body>
+ }</html>

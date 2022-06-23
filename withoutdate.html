@@ -1,0 +1,109 @@
+<body>
+<center>
+<h2 style="color: 32A80F" align="center"> Calculate Age from Date of Birth <br> <br> </h2> 
+
+<!-- Choose a date and enter in input field -->
+<b> Enter Date of Birth: <input type=date id = DOB> </b>
+<span id = "message" style="color:red"> </span> <br><br>  
+
+<!-- Choose a date and enter in input field -->
+<button type="submit" onclick = "ageCalculator()"> Calculate age </button> <br><br>
+<h3 style="color:32A80F" id="result" align="center"> your age ....</h3> 
+<h3 id="resu"></h3>
+</center>
+array:<input type="text" id="arraya">
+<button onclick="call()">submit</button>
+array:<input type="text" id="idd">
+<button onclick="cell()">submit</button>
+<h1 id="result"></h1>
+<script>
+ function ageCalculator(){
+ var user=document.getElementById("DOB").value;
+ var dob=new Date(user);
+ 
+ 
+ 
+  if(user==null || user==''){
+      document.getElementById("message").innerHTML = "**Choose a date please!";  
+      return false; 
+    } 
+    
+ 
+ }
+
+
+function call(){
+ var val=document.getElementById("arraya").value;
+
+ var a=[1,2,4,8,16,32,64,128,256,512]
+	a = a.reverse()
+console.log("main array:"+a.reverse());
+
+let sum = 0
+var b=a.filter(function(item){
+	
+return  val > item
+
+});
+b = b.reverse();
+var diff = val
+var c = [];
+b.forEach(numItem => {
+console.log(sum,numItem, diff,val,"checkkk")
+
+if(sum < val && numItem <= diff ) {
+
+	sum+= numItem;
+	
+	c.push(numItem);
+}
+diff = val - sum;
+
+
+})
+document.getElementById("result").innerHTML=c.reverse();
+console.log(c.reverse());
+console.log("sum array:"+c.reverse());
+}
+
+function cell(){
+
+var input=document.getElementById("idd").value;
+
+var ar=[1,2,4,8,16,32,64,128,256,512]
+
+ar=ar.reverse();
+
+console.log("main"+ar.reverse);
+let summ=0;
+var fil=ar.filter(function(items){
+return input >items;
+});
+
+
+
+var differ=input;
+var x = [];
+
+fil.forEach(numbe => {
+console.log(summ,numbe, differ,input,"checkkk")
+if(summ < input && numbe <= differ){
+
+summ+=numbe;
+
+x.push(numbe);
+
+}
+
+differ=input-summ;
+})
+console.log(x.reverse());
+ document.getElementById("result").innerHTML=x.reverse();
+console.log("hello")
+
+
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+  h2{
+  color:green;
+  text-align:center;
+  }
+  .main{
+   text-align:center;
+  }
+   
+
+</style>
+</head>
+<body>
+<h2>GET THE DAY</h2>
+<div class="main">
+<label>YEAR</label>:<input type="text" class="input" id="yer"><br><br><p id="demo" style="color:red"></p>
+<label>MONTH:</label><input type="text"  class="input" id="mnth"><br><br><p id="deo" style="color:red"></p>
+<label>DATE:</label><input type="text"  class="input" id="dates"><br><br><p id="dmo" style="color:red"></p>
+<input type="submit" id="submit" class=".button" onclick="getdays()"><br>
+<p id="dem"></p>
+</div>
+<form>
+   <script>
+ function getdays(date,month,year){
+ 
+var year=document.getElementById("yer").value;
+var month=document.getElementById("mnth").value;
+var date=document.getElementById("dates").value;
+//var input=document.querySelector(".input");
+
+//input.addEventListener("change", stateHandle);
+     var res= new Date(year,month,date).getDay();
+  // var result=day+" /"+month+" /"+year;
+ if(year!=""){
+       document.getElementById("demo").innerHTML="okkkk!!!!continu";
+       document.getElementById("demo").style.color="blue";
+           }
+   else{
+       document.getElementById("demo").innerHTML="please enter year ";
+	  }
+	  if(isNaN(year)){
+	  document.getElementById("demo").innerHTML="only allows the numbers only";
+	  document.getElementById("demo").style.color="#818100";
+	  } 
+ if(month!=""){
+	    document.getElementById("deo").innerHTML="okkkk!!!!continu";
+		document.getElementById("deo").style.color="blue";
+            }
+  else{
+	    document.getElementById("deo").innerHTML="please enter month ";
+		}
+   if(isNaN(month)){
+	  document.getElementById("deo").innerHTML="only allows the numbers only";
+	  document.getElementById("deo").style.color="#818100";
+	  } 
+  if(date!=""){
+       document.getElementById("dmo").innerHTML="okkkk!!!!continu";
+	   document.getElementById("dmo").style.color="blue";
+				 }
+    else{
+	  document.getElementById("dmo").innerHTML="please enter date ";
+	}
+ if(isNaN(date)){
+	  document.getElementById("dmo").innerHTML="only allows the numbers only";
+	  document.getElementById("dmo").style.color="#818100";
+	  }
+		
+
+
+
+/*function stateHandle(){
+	if(document.querySelector(".input").value === "") {
+        button.disabled = true;
+    } else {
+        button.disabled = false;
+    }
+	
+	}*/
+	
+  let day=res;
+  switch (day) {
+   
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+	break;
+	 default:
+
+	day = "Looking forward to the Weekend";
+}
+    document.getElementById("dem").innerHTML="the day is "+day;
+	console.log(day);
+	 
+}
+</script>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+</head>
+<body>
+<script>
+function timeDiffCalc(dateFuture, dateNow) {
+    let differnces = Math.abs(dateFuture - dateNow) / 1000;
+
+    // calculate days
+    const days = Math.floor(differnces / 86400);
+   differnces -= days * 86400;
+    console.log('calculated days', days);
+
+    // calculate hours
+    const hours = Math.floor(differnces / 3600) % 24;
+   differnces -= hours * 3600;
+    console.log('calculated hours', hours);
+
+    // calculate minutes
+    const minutes = Math.floor(differnces / 60) % 60;
+    differnces -= minutes * 60;
+    console.log('minutes', minutes);
+
+    let difference = '';
+    if (days > 0) {
+      difference += (days === 1) ? `${days} day, ` : `${days} days, `;
+    }
+
+    difference += (hours === 0 || hours === 1) ? `${hours} hour, ` : `${hours} hours, `;
+
+    difference += (minutes === 0 || hours === 1) ? `${minutes} minutes` : `${minutes} minutes`; 
+
+    return difference;
+  }
+
+  document.write(timeDiffCalc(new Date('2000/06/3 6:0:00'), new Date('2022/2/4 8:20:00')));
+  
+</script>
+</body>
+</html>

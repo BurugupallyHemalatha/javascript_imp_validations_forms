@@ -1,0 +1,141 @@
+ 
+
+<table id="myTable">
+ <tr>
+    <th>Name</th>
+    <th>compnay</th>
+	<th>job</th>
+  </tr>
+  <tr>
+  <th><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."></th>
+  <th><input type="text" id="Input" onkeyup="myFunction()" placeholder="Search for names.." ></th>
+  <th><input type="text" id="myInpu" onkeyup="myFunction()" placeholder="Search for names.."></th>
+  </tr>
+  <tr>
+    <td>ram</td>
+	<td>deloite</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>jaggu</td>
+	<td>apple</td>
+	<td>webdeveloper</td>
+  </tr>
+   <tr>
+    <td>sahari</td>
+	<td>deloite</td>
+	<td>softwaredeveloper</td>
+  </tr>
+   <tr>
+    <td>kiran</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>jagadeesh</td>
+	<td>deloite</td>
+	<td>.net</td>
+  </tr>
+   <tr>
+    <td>raju</td>
+	<td>apple</td>
+	<td>designer</td>
+  </tr>
+ <tr>
+    <td>sai</td>
+	<td>deloite</td>
+	<td>developer</td>
+  </tr>
+   <tr>
+    <td>dhurva</td>
+	<td>apple</td>
+	<td>developer</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, Value;
+  input = document.getElementById("myInput");
+  filter = input.value;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      Value = td.predata || td.innerText;
+      if (Value.indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+  
+  var inpu, filte, tabl, t, td, j, secondinput;
+  inpu = document.getElementById("Input");
+  filte = inpu.value;
+  tabl = document.getElementById("myTable");
+  t= tabl.getElementsByTagName("tr");
+  for (j = 0; j < t.length; j++) {
+    td= tr[j].getElementsByTagName("td")[0];
+	if(td){
+	secondinput=td.Content || td.innerText;
+	if(secondinput.indexOf(filte) > -1) {
+	          tr[j].style.display = "";
+      } else {
+        tr[j].style.display = "none";
+      }
+  }
+  }
+  
+  var result=value &&  secondinput;
+  if(result) {
+	          tr[j].style.display = "";
+      } else {
+              tr[j].style.display = "none";
+      }
+  }
+  
+ /* function myfu(){
+  
+    var input, filter, table, tr, td, j, Value;
+  input = document.getElementById("Input");
+  filter = input.value;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (j = 0; j < tr.length; j++) {
+    td = tr[j].getElementsByTagName("td")[0];
+    if (td) {
+      Value = td.Content || td.innerText;
+      if (Value.indexOf(filter) > -1) {
+        tr[j].style.display = "";
+      } else {
+        tr[j].style.display = "none";
+      }
+    }       
+  }
+  }
+  
+  function myfunct(){
+      var input, filter, table, tr, td, v, Value;
+  input = document.getElementById("myInpu");
+  filter = input.value;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (v = 0; v < tr.length; v++) {
+    td = tr[v].getElementsByTagName("td")[0];
+    if (td) {
+      Value = td.maindata || td.enterdata;
+      if (Value.indexOf(filter) > -1) {
+        tr[v].style.display = "";
+      } else {
+        tr[v].style.display = "none";
+      }
+    }       
+  }
+}
+*/
+</script>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+
+<h3>MULTIPLICATION TABLE</h3>
+<input type="text"placeholder="enter only numbers " id="numbers">
+<br><br>
+<button onclick="multip()">click</button>
+<p id="demo"></p>
+
+<script>
+	function  multip(){
+	 var number=parseInt(document.getElementById("numbers").value);
+		 for(let i=1;i<=10;i++){
+		 var result=i*number;
+		console.log(`${number} * ${i} = ${result}`);
+	 document.getElementById("demo").innerHTML=`${number}*${i}=${result}`;
+		 
+	 }
+	 }
+	 /*const number = parseInt(prompt('Enter an integer: '));
+
+//creating a multiplication table
+			function  multip(){
+			 var num1=document.getElementById("number").value;
+			for(let i = 1; i <= 10; i++) {
+
+				// multiply i with number
+				const result = i * num1;
+
+				// display the result
+				console.log(`${num1} * ${i} = ${result}`);
+			}
+			document.getElementById("demo").innerHTML=`${num1} * ${i} = ${result}`;
+			}*/
+</script>
+</body>
+</html>

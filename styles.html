@@ -1,0 +1,33 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> </title>
+</head> 
+  
+<body style = "text-align:center;" id = "body"> 
+      
+    <h1 id = "h1" style = "color:blue;" > HEADING</h1>
+      
+    <p id = "up" style = "font-size: 15px; font-weight: bold;"></p>
+          
+    <button onclick = "changecolor()">  Click here  </button>
+      
+    <p id = "down" style ="font-size: 23px; font-weight: bold; color: green; "> </p>
+      
+    <script>
+        var eleup = document.getElementById("up");
+        var eledown = document.getElementById("down");
+        var heading = document.getElementById("h1");
+        eleup.innerHTML = "Click on the button to " + "change the style attribute";
+          
+        function changecolor() {
+            heading.style["background-color"] = "green";
+            heading.style["color"] = "white";
+			heading.style["border"]="2px solid #e51616";
+            eledown.innerHTML = "Style Attribute Changed";
+        }         
+    </script> 
+</body> 
+  
+</html>

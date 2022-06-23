@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+  h2{
+  color:green;
+  text-align:center;
+  }
+  .main{
+   text-align:center;
+  }
+   
+
+</style>
+</head>
+<body>
+<h2>GET THE DAY</h2>
+<div class="main">
+<label>YEAR</label>:<input type="text" class="input" id="yer"><br><br><p id="demo" style="color:red"></p>
+<label>MONTH:</label><input type="text"  class="input" id="mnth"><br><br><p id="deo" style="color:red"></p>
+<label>DATE:</label><input type="text"  class="input" id="dates"><br><br><p id="dmo" style="color:red"></p>
+<input type="submit" id="submit" class=".button" onclick="getdays()"><br>
+<p id="dem"></p>
+</div>
+   <script>
+ function getdays(date,month,year){
+ 
+var year=document.getElementById("yer").value;
+var month=document.getElementById("mnth").value;
+var date=document.getElementById("dates").value;
+
+
+ var res= new Date(date).getDay();
+ 

@@ -1,0 +1,35 @@
+
+<html>
+<head>
+</head>
+<body>
+<p id="demo"></p>
+<p id="dem"></p>
+<p id="deo"></p>
+<p id="d"></p>
+<script>
+const names = ['apples','greenapples','apples','bananna','sweet','bananna','sweet'];
+
+let unique = [...new Set(names)];
+document.getElementById("demo").innerHTML=unique;
+
+
+let arr = [1,2,3,1,1,1,4,5]
+    
+let filtered = arr.filter((item,index) => arr.indexOf(item) === index)
+document.getElementById("dem").innerHTML=filtered;
+
+function toUniqueArray(a){
+    var newArr = [];
+    for (var i = 0; i < a.length; i++) {
+        if (newArr.indexOf(a[i]) === -1) {
+            newArr.push(a[i]);
+        }
+    }
+  return newArr;
+}
+var colors = ["red","red","green","green","green"];
+document.getElementById("d").innerHTML=toUniqueArray(colors);
+</script>
+</body>
+</html>
